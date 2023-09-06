@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}New Feedback{% endblock %}
+
+{% block content %}
+    <h1>Create Feedback</h1>
+
+    <form action="/users/{{user.username}}/feedback/add" method="POST">
+         {{ form.hidden_tag() }}
+        {{ form.title.label }}
+        {{ form.title() }}
+        {{ form.content.label }}
+        {{ form.content() }}
+
+        <br>
+
+        <button class="btn btn-success" type="submit">Add Post</button>
+    </form>
+
+    <a href="/users/{{user.username}}">Go Back</a>
+
+{% endblock %}
